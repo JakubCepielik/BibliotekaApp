@@ -16,11 +16,6 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="KsiazkiId" class="control-label"></label>
-                <input asp-for="KsiazkiId" class="form-control" />
-                <span asp-validation-for="KsiazkiId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Nazwa" class="control-label"></label>
                 <input asp-for="Nazwa" class="form-control" />
                 <span asp-validation-for="Nazwa" class="text-danger"></span>
@@ -32,17 +27,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="Autor" class="control-label"></label>
-                <input asp-for="Autor" class="form-control" />
-                <span asp-validation-for="Autor" class="text-danger"></span>
+                <select asp-for="AutorId" class="form-control" asp-items="@ViewBag.Autorzy">
+                </select>
+                <span asp-validation-for="AutorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Wydawnictwo" class="control-label"></label>
+                <select asp-for="WydawnictwoId" class="form-control" asp-items="@ViewBag.Wydawnictwa">
+                </select>
+                <span asp-validation-for="WydawnictwoId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Kategoria" class="control-label"></label>
                 <select asp-for="Kategoria" class="form-control" asp-items="Html.GetEnumSelectList<KsiazkaKategoria>()">
-                    <option selected="selected" value="">Wybierz Kategorie</option>
                 </select>
                 <span asp-validation-for="Kategoria" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="form-group" style="margin-top:10px; margin-bottom:10px">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -50,9 +51,11 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="text-decoration: none">Powrót do listy</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
