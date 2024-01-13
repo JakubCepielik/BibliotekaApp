@@ -23,6 +23,6 @@ Projekt składa się z następujących tabel:
 2. Uruchomić plik BibliotekaApp.sln
 3. W Solution Explorer uruchomić appsettings.json i w ConnectionStrings wprowadzić nazwę serwera
 4. Przejść do Tools -> NuGet Package Menager -> Package Menager Conosole
-5. Wykonać migrację przy pomocy Add-Migration "NazwaMigracji" a następnie Update-Database
+5. Wykonać polecenie Update-Database
 6. Uruchomić program
 
