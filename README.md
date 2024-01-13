@@ -12,7 +12,7 @@ Projekt składa się z następujących tabel:
 - Wydawnictwo
 - Czytelnik
 - Adres
-  między którymi wystepują relacje
+## Relacje
 - Książka - Czytelnik -> wiele do wielu
 - Autor - Książka -> 1 do wielu
 - Wydawnictwo - Książka -> 1 do 1
